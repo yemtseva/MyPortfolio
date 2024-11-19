@@ -849,3 +849,55 @@ if ($("#instafeed").length > 0) {
 			}
 		});
 }
+let count = 0;
+function guess(element) {
+    const isLie = element.getAttribute('data-lie') === 'true'; // Check if the clicked fact is the lie
+    const result = document.getElementById('result');
+
+
+    // Display the result
+    if (count == 2) {
+        result.textContent = "They are all facts! xD";
+        result.style.color = "#E85D04";
+    } else {
+        result.textContent = "Wrong! This is a fact.";
+        result.style.color = "red";
+        count++;
+    }
+
+    // Show the result
+    result.style.display = "block";
+}
+
+
+function checkAnswer(element) {
+    const isCorrect = element.getAttribute('data-correct') === 'true'; // Check if the clicked image is correct
+    const result = document.getElementById('result2');
+
+    // Display the result
+    if (isCorrect) {
+        result.textContent = "Correct!";
+        result.style.color = "green";
+    } else {
+        result.textContent = "Wrong!";
+        result.style.color = "red";
+    }
+    // Show the result
+    result.style.display = "block";
+}
+
+function guess2(element) {
+    const isLie = element.getAttribute('data-lie') === 'true'; // Check if the clicked fact is the lie
+    const result = document.getElementById('result3');
+
+    // Display the result
+    if (isLie) {
+        result.textContent = "Correct!";
+        result.style.color = "green";
+    } else {
+        result.textContent = "Wrong!";
+        result.style.color = "red";
+    }
+
+    result.style.display = "block";
+}
